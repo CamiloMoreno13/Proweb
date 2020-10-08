@@ -1,0 +1,8 @@
+2020-03-09 21:18:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO BUS (ID, MODELO, PLACA) VALUES (-1,'mibus','123') INSERT[*] INTO BUS (ID, MODELO, PLACA) VALUES (-2,'mibus2','124') "
+Syntax error in SQL statement "INSERT INTO BUS (ID, MODELO, PLACA) VALUES (-1,'mibus','123') INSERT[*] INTO BUS (ID, MODELO, PLACA) VALUES (-2,'mibus2','124') "; SQL statement:
+insert into bus (id, modelo, placa) values (-1,'mibus','123') insert into bus (id, modelo, placa) values (-2,'mibus2','124') [42000-199]
+2020-03-09 21:19:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO BUS (ID, MODELO, PLACA) VALUES (-1,'mibus','123') INSERT[*] INTO BUS (ID, MODELO, PLACA) VALUES (-2,'mibus2','124') "
+Syntax error in SQL statement "INSERT INTO BUS (ID, MODELO, PLACA) VALUES (-1,'mibus','123') INSERT[*] INTO BUS (ID, MODELO, PLACA) VALUES (-2,'mibus2','124') "; SQL statement:
+insert into bus (id, modelo, placa) values (-1,'mibus','123') insert into bus (id, modelo, placa) values (-2,'mibus2','124') [42000-199]

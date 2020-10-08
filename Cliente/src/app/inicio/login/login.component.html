@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+ <div class="login">
+    <form (ngSubmit)="doLogin()">
+        <div>
+            <input name="user" placeholder="Usuario" [(ngModel)]="user" type="text">
+            <input name="pass" placeholder="Contraseña" [(ngModel)]="password" type="password">
+         </div>
+        <button type="submit">INGRESAR</button>  
+        <p>{{message}}</p>
+    </form> 
+ </div>
+</body>
+</html>
+

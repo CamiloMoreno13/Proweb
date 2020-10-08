@@ -1,0 +1,39 @@
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Conductores</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="tabla">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Cedula</th>
+              <th>Telefono</th>
+              <th>Dirección</th>
+              <th>Buses Asignados</th> 
+            </tr>
+          </thead>
+          <tbody>
+             <tr *ngFor="let conductor of conductores">
+             <td><a [routerLink]="['/conductor/edit-conductor',conductor.id]">{{conductor.nombre}}</a></td>
+             <td>{{conductor.cedula}}</td>
+             <td>{{conductor.telefono}}</td>
+             <td>{{conductor.direccion}}</td>
+             <td>{{busesAsignados[ conductor.id] }}</td>
+          </tbody>
+        </table>
+      </div>
+      <div class="botones">
+        <button (click)=crear()><img src="assets/General/crear.png">Crear</button>
+        <button (click)=back()><img src="assets/General/volver.png">Regresar</button>
+      </div>
+
+    </div>
+  </body>
+  </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit-ruta</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="datos">
+            <div class="label">
+                <label> Codigo</label>
+                <input [(ngModel)]="ruta.codigo">
+            </div>
+        </div>
+        <div class="tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Numero</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let rutaEstacion of estacionRutas">
+                        <td>{{rutaEstacion.estacion.nombre}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tabla2">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hora inicio</th>
+                        <th>Hora fin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let horario of horarios">
+                        <td>{{horario.fechaInicio}}</td>
+                        <td>{{horario.fechaFin}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="añadir">
+            <div class="c-añadir">
+                <select [(ngModel)]="estacion">
+                    <option *ngFor="let estacionItem of estaciones" [ngValue]="estacionItem">{{estacionItem.nombre}}</option>  
+                </select>
+                <button (click)="addEstacion()"> <img src="assets/General/add2.png">Agregar estacion</button>
+                  <input  [(ngModel)]="fechaInicio" type="datetime-local">
+                  <input  [(ngModel)]="fechaFin" type="datetime-local">
+                  <button (click)="addHorarioRuta()"> <img src="assets/General/add2.png">Agregar horario</button>
+            </div>
+        </div>
+        <div class="quitar">
+            <div class="c-quitar">
+                <select [(ngModel)]="estacion">
+                    <option [ngValue]="estacionItem.estacion" *ngFor="let estacionItem of estacionRutas">{{estacionItem.estacion.nombre}}</option>
+                  </select>
+                  <button (click)="delEstacion()"> <img src="assets/General/quitar.png">Quitar estación</button>
+                  <select id="existentes" [(ngModel)]="horario">
+                    <option [ngValue]="horarioItem" *ngFor="let horarioItem of horarios">{{horarioItem.fechaInicio}} to {{horarioItem.fechaFin}}</option>
+                  </select>
+                  <button (click)="delHorario()"> <img src="assets/General/quitar.png">Quitar horario</button>
+            </div>
+        </div>
+        
+        <div class="botones">
+            <button (click)="[back()]"><img src="assets/General/volver.png">Regresar</button>
+            <button (click)="crear_actu()"><img src="assets/General/guardar.png">{{texto}}</button>
+            <button *ngIf="crear_actualizar" (click)="eliminar()"><img src="assets/General/borrar.png">Eliminar ruta</button>
+        </div>
+    </div>
+</body>
+</html>

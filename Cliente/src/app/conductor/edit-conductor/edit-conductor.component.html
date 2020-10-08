@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="datos">
+            <div class="label">
+                <label>Nombre</label>
+                <input [(ngModel)]="conductor.nombre">
+            </div>
+            <div class="label">
+                <label>Cedula</label>
+                <input [(ngModel)]="conductor.cedula">
+            </div>
+            <div class="label">
+                <label>Telefeno</label>
+                <input [(ngModel)]="conductor.telefono">
+            </div>
+            <div class="label">
+                <label>Direccion</label>
+                <input [(ngModel)]="conductor.direccion">
+            </div>
+        </div>
+        <div class="tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Placa</th>
+                        <th>Modelo</th>
+                        <th>Horario</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr *ngFor="let horario of horarios">
+                            <td>{{horario.bus.placa}}</td>
+                            <td>{{horario.bus.modelo}}</td>
+                            <td>{{horario.fecha}}</td>
+                        </tr>
+        
+                    </tbody>
+            </table>
+        </div>
+
+        <!--Verificar que en lo select vayan las opciones-->
+        <div class="añadir">
+            <div class="c-añadir">
+                <select [(ngModel)]="bus">
+                    <option value="-1">Seleccione una opción</option>
+                    <option *ngFor="let busItem of buses" [ngValue]="busItem" >{{busItem.placa}}</option>
+                  </select>
+                  <input value="fecha" [(ngModel)]="fecha" type="date" min="2020-03-23" max="2020-12-31">
+                  <button (click)="[addbus()]"> <img src="assets/General/add2.png">Agregar bus</button>
+            </div>
+        </div>
+        <!--Verificar que en lo select vayan las opciones-->
+        <div class="quitar">
+            <div class="c-quitar">
+                <select [(ngModel)]="bus">
+                    <option value="-1">Seleccione una opción</option>
+                    <option *ngFor="let horario of horarios" [ngValue]="horario.bus" >{{horario.bus.placa}}</option>
+                  </select>
+                  <button (click)="delbus()"> <img src="assets/General/quitar.png">Quitar bus</button>
+            </div>
+        </div>
+        <div class="botones">
+            <button (click)="back()"> <img src="assets/General/volver.png"> Regresar </button>
+            <button (click)="crear_actualizar()"> <img src="assets/General/guardar.png">{{texto}} </button>
+            <button *ngIf="crear_eliminar" (click)="deleteConductor()"><img src="assets/General/borrar.png">Eliminar conductor</button>
+        </div>
+    </div>
+</body>
+</html>

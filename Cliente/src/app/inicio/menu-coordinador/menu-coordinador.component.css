@@ -1,0 +1,26 @@
+div{
+    margin-top:20%;
+    margin-left: 20%;
+    display: block;
+    
+}
+.conductor , .autobus{
+    width: 400px;
+    height: 150px;
+}
+
+.conductor{
+    margin-right: 100px;
+}
+
+span{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.salir{
+    width: 100px;
+    height: 80px;
+    border-radius: 15px;
+    border-color: black;
+}

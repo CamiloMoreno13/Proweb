@@ -1,0 +1,68 @@
+*{
+    margin: 0px;
+    padding: 0px
+}
+.contenedor{
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 1000px;
+    height: 600px;
+}
+
+.tabla{
+    width: 800px;
+    height: 400px;
+    margin-left: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;   
+}
+.botones{
+    
+    margin-top: 50px;
+    width: 1000px;
+    height: 100px;
+}
+
+img{
+    margin-right: 10px;
+}
+
+button{
+    margin-top: 10px;
+    margin-left: 120px;
+    width: 300px;
+    height: 60px;
+    border-radius: 15px;
+    border-color: black;
+}
+/* ----------------Diseño de la tabla ----------------------*/
+
+table{
+    margin:auto;
+    margin-top: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border: 2px solid black;  
+    border-collapse: collapse;
+}
+
+tr:nth-child(odd) {
+    background-color:white;
+    color:black;
+}
+tr:nth-child(even) {
+    background-color:rgb(0, 102, 255);
+    color:black;
+}
+th {
+    color :white;
+    background-color:black;
+}
+
+th,td{
+    width: 200px;
+    height: 10px;
+    text-align: center; 
+    border: 2px solid black;  
+}

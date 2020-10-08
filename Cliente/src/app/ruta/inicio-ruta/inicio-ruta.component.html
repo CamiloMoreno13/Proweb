@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inicio-Buses</title>
+
+</head>
+<body>
+  <button class="salir" (click)="logout()"><span><img src="assets/General/logout.png"></span>logout</button>
+    <div class="contenedor">
+      <div class="tabla">
+        <table>
+          <thead>
+            <tr>
+              <th>Codigo</th>
+              <th>Estaciones</th>
+              <th>Fecha inicio</th>
+              <th>Fecha fin</th>
+            </tr>
+          </thead>
+          <tbody>
+           
+            <tr *ngFor="let horario of horarioRutas">
+              
+                <td><a [routerLink]="['/ruta/edit-ruta',horario.ruta.id]">{{horario.ruta.codigo}}</a></td>
+                <td>{{estaciones[ horario.ruta.id ]}}</td>
+                <td>{{horario.fechaInicio}}</td>
+                <td>{{horario.fechaFin}}</td>
+            </tr>
+     
+          </tbody>
+        </table>
+      </div>
+      <div class="botones">
+        <button (click)="crear()"><img src="assets/General/add.png">Crear</button>
+      </div>
+    </div>
+</body>
+</html>

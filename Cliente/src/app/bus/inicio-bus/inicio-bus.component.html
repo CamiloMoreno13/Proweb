@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buses</title>
+
+</head>
+
+<body>
+    <div class="contenedor">
+      <div class="tabla">
+          <table>
+            <thead>
+              <tr>
+                <th>Placa</th>
+                <th>Modelo</th>
+                <th>Rutas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let bus of buses">
+                <td><a [routerLink]="['/bus/edit-bus',bus.id]" >{{bus.placa}}</a></td>
+                <td>{{bus.modelo}}</td>
+                <td>{{rutasBus[bus.id]}}</td>
+              </tr>
+            </tbody>
+          </table>    
+      </div>
+      <div class="botones">
+        <button (click)=goTo()><img src="assets/General/add.png">Crear</button>
+        <button (click)=back()><img src="assets/General/volver.png">Regresar</button>
+      </div>
+    </div>
+</body>
+</html>

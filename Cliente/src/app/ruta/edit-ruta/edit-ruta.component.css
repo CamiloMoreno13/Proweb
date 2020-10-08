@@ -1,0 +1,121 @@
+/* ---------------------Ordenamiento de los elementos --------------------------*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+
+}
+
+.contenedor{
+    margin: auto;
+    margin-top: 50px;
+    width: 1300px;
+    height: 900px;
+    /*background: rgb(19,5,247);
+    background: linear-gradient(90deg, rgba(19,5,247,1) 0%, rgba(255,255,255,1) 50%, rgba(255,0,0,1) 100%);
+    */
+    
+}
+
+.datos{
+    width: 500px;
+    height: 300px;
+    float:left;
+}
+.tabla{
+    width: 300px;
+    height: 300px;
+    float: left;  
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.tabla2{
+    width: 500px;
+    height: 300px;
+    float: left;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.añadir{
+    width: 1300px;
+    height: 200px;
+    float: left;
+}
+select{
+    width: 150px;
+    height: 50px;
+    margin-right: 50px;
+    border-color:black;
+    border-radius: 10px;
+    border-style: solid 20px;
+}
+.c-añadir{
+    margin-left: 100px;
+}
+.quitar{
+    width: 1300px;
+    height: 200px;
+    float: left;
+}
+.c-quitar{
+    margin-left: 150px;
+}
+.botones{
+    width: 1300px;
+    height: 200px;
+    float: left;
+}
+
+.label{
+    margin-top: 60px;
+    margin-left: 50px;
+}
+input{
+    width: 150px;
+    margin-left: 10px ;
+    border-color:black;
+}
+button{
+    margin: 50px;
+    margin-left: 70px;
+    width: 200px;
+    height: 60px;
+    border-radius: 15px;
+    border-color: black;
+}
+.regresar{
+    margin-left: 200px;
+}
+img{
+    margin-right: 10px;
+}
+/* ----------------Diseño de la tabla ----------------------*/
+table{
+    margin:auto;
+    margin-top: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border: 2px solid black;  
+    border-collapse: collapse;
+}
+tr:nth-child(odd) {
+    background-color:rgb(0, 102, 255);
+    color:black;
+}
+tr:nth-child(even) {
+    background-color:white;
+    color:black;
+}
+th {
+    color :white;
+    background-color:black;
+}
+
+th,td{
+    width: 200px;
+    height: 10px;
+    text-align: center; 
+    border: 2px solid black;  
+}

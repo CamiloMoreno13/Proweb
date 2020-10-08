@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="datos">
+            <div class="label">
+                <label>Placa</label>
+                <input name="placa" [(ngModel)]="bus.placa">
+            </div>
+            <div class="label">
+                <label>Modelo</label>
+                <input name="modelo" [(ngModel)]="bus.modelo">
+            </div>
+        </div>
+
+        <div class="tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>codigo</th>
+                        <th>estaciones</th>
+                        <th>Horario</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr *ngFor="let horario of horarioBus">
+                            <td>{{horario.ruta.codigo}}</td>
+                            <td>{{estaciones[horario.ruta.id]}}</td>
+                            <td>{{horario.fecha}}</td>
+                        </tr>
+        
+                    </tbody>
+            </table>
+        </div>
+         <!--Verificar que en lo select vayan las opciones-->
+         <div class="añadir">
+            <div class="c-añadir">
+                <select [(ngModel)]="ruta" >
+                    <option value="-1">Seleccione una opción</option>
+                    <option *ngFor="let rut of rutas" [ngValue]=rut >{{rut.codigo}}</option>
+                  </select>
+                  <input [(ngModel)]="fecha" value="fecha" type="date" min="2020-03-23" max="2020-12-31">
+                  <button (click)="[addruta()]"><img src="assets/General/add2.png">Agregar ruta</button>
+            </div>
+        </div>
+        <!--Verificar que en lo select vayan las opciones-->
+        <div class="quitar">
+            <div class="c-quitar">
+                <select [(ngModel)]="ruta">
+                    <option value="-100">Seleccione una opción</option>
+                    <option *ngFor="let horario of horarioBus" [ngValue]="horario.ruta">{{horario.ruta.codigo}} - {{horario.fecha}}</option>
+                  </select>
+                  <button (click)="delruta()"> <img src="assets/General/quitar.png">Quitar ruta</button>
+            </div>
+        </div>
+        <div class="botones">
+            <button class="btn" (click)="back()"><img src="assets/General/volver.png">Regresar</button>
+            <button (click)="crear_actualizar()"><img src="assets/General/guardar.png">{{texto}}</button>
+            <button *ngIf="crear_eliminar" (click)="deleteBus()"><img src="assets/General/borrar.png">Eliminar bus</button>
+        </div>
+    </div>
+</body>
+</html>
